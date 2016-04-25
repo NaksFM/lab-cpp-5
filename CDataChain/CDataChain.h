@@ -1,6 +1,8 @@
 #ifndef _CDataChain_
 #define _CDataChain_
 
+#include <string>
+
 class CDataChain
 {
 public:
@@ -14,12 +16,12 @@ public:
 	// -1, якщо підстрічки не знайдено
 	int Find(const char* sSubStr, int nPos = 0);
 	//повертає підстрічку починаючи із nPos довжиною nLength. або до кінця послідовності
-	string GetSubStr(int nPos, int nLength = -1);
+	std::string GetSubStr(int nPos, int nLength = -1);
 	//повертає всю згенеровану послідовність цифр
 	const char* GetFullString();
 protected:
 	//стрічка із згенерованою послідовністю цифр
-	string m_sChain;
+	std::string m_sChain;
 };
 
 #endif
