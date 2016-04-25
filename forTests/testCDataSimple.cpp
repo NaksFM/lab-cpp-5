@@ -5,7 +5,7 @@
 using namespace std;
 
 int main (int argc, char* argv[]) {
-	CDataSimple simple;
+	CDataSimple dataSimple;
 	// dataSimple.Generate(15, 20);
 
 	// cout << dataSimple.GetFullString() << endl;

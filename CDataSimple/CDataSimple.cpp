@@ -5,7 +5,13 @@
 
 using namespace std;
 
+CDataSimple::CDataSimple(){};
+CDataSimple::~CDataSimple(){};
+
 int CDataSimple::_numberLength(int number) {
+	if (number == 0) {
+		return 1;
+	}
 	return floor(log10(number)) + 1;
 };
 

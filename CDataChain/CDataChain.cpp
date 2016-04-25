@@ -5,6 +5,9 @@
 
 using namespace std;
 
+CDataSimple::CDataSimple(){};
+CDataSimple::~CDataSimple(){};
+
 int CDataChain::Find(const char* sSubStr, int nPos) {
     int pos = m_sChain.find(sSubStr, nPos);
     return ( pos == string::npos) ? -1 : pos;
