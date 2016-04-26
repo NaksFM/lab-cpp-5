@@ -1,9 +1,7 @@
 #include "CWorkspace.h"
-#include "CDataSimple"
+#include "CDataSimple.h"
 
-CWorkspace::CWorkspace(CDataChain& data) {
-	m_refChain = data;
-}
+CWorkspace::CWorkspace(CDataChain& data):m_refChain(data){}
 
 CWorkspace::~CWorkspace(){}
 

@@ -82,11 +82,13 @@
   <ItemGroup>
     <ClCompile Include="CDataChain.cpp" />
     <ClCompile Include="CDataSimple.cpp" />
+    <ClCompile Include="CWorkspace.cpp" />
     <ClCompile Include="testCDataSimple.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CDataChain.h" />
     <ClInclude Include="CDataSimple.h" />
+    <ClInclude Include="CWorkspace.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

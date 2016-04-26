@@ -24,12 +24,18 @@
     <ClCompile Include="testCDataSimple.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CWorkspace.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CDataChain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CDataSimple.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CWorkspace.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
