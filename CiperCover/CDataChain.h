@@ -1,5 +1,6 @@
-#ifndef _CDataChain_
-#define _CDataChain_
+//#ifndef _CDataChain_
+//#define _CDataChain_
+#pragma once
 
 #include <string>
 
@@ -19,9 +20,10 @@ public:
 	std::string GetSubStr(int nPos, int nLength = -1);
 	//повертає всю згенеровану послідовність цифр
 	const char* GetFullString();
+	std::string setString(std::string& str);
 protected:
 	//стрічка із згенерованою послідовністю цифр
 	std::string m_sChain;
 };
 
-#endif
+//#endif

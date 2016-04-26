@@ -24,3 +24,8 @@ string CDataChain::GetSubStr(int nPos, int nLength) {
 const char* CDataChain::GetFullString() {
     return m_sChain.c_str();
 }
+
+string CDataChain::setString(string& str) {
+	m_sChain = str;
+	return str;
+}
