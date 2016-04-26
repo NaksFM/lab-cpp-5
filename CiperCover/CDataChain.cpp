@@ -5,8 +5,8 @@
 
 using namespace std;
 
-CDataSimple::CDataSimple(){};
-CDataSimple::~CDataSimple(){};
+CDataChain::CDataChain(){};
+CDataChain::~CDataChain(){};
 
 int CDataChain::Find(const char* sSubStr, int nPos) {
     int pos = m_sChain.find(sSubStr, nPos);

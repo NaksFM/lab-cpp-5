@@ -1,7 +1,7 @@
 #ifndef _CDataSimple_
 #define _CDataSimple_
 
-#include "../CDataChain/CDataChain.h"
+#include "CDataChain.h"
 
 class CDataSimple : public CDataChain
 {
