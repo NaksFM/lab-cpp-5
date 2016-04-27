@@ -1,8 +1,12 @@
+_CiperCover_
+
 *.sdf
 *.exe
 *.suo
 *.opensdf
 *.bin
 *.o
-CiperCover
+
+
+# але не ігноруємо Makefile
 !Makefile

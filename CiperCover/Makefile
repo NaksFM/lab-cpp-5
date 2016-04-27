@@ -1,7 +1,7 @@
 all: CiperCover
 
-CiperCover: CDataChain.o CDataSimple.o CWorkspace.o main.o
-	g++ CDataChain.o CDataSimple.o CWorkspace.o main.o -o CiperCover
+CiperCover: CDataChain.o CDataSimple.o CWorkspace.o CDlgCommand.o CDialogManager.o main.o
+	g++ CDataChain.o CDataSimple.o CWorkspace.o CDlgCommand.o CDialogManager.o main.o -o _CiperCover_
 
 CDataChain.o: CDataChain.cpp
 	g++ -c CDataChain.cpp
@@ -12,8 +12,14 @@ CDataSimple.o: CDataSimple.cpp
 CWorkspace.o: CWorkspace.cpp
 	g++ -c CWorkspace.cpp
 
+CDlgCommand.o: CDlgCommand.cpp
+	g++ -c CDlgCommand.cpp
+
+CDialogManager.o: CDialogManager.cpp
+	g++ -c CDialogManager.cpp
+
 main.o: main.cpp
 	g++ -c main.cpp
 
 clear: 
-	rm -rf *o CiperCover
+	rm -rf *o _CiperCover_
