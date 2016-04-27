@@ -17,7 +17,8 @@ const char* CWorkspace::GetChainString() {
 }
 
 bool CWorkspace::Save(std::string& sFilepath) {
-	std::fstream fo(sFilepath, std::ios_base::out | std::ios_base::binary);	if (!fo.bad()) {
+	std::fstream fo(sFilepath.c_str(), std::ios_base::out | std::ios_base::binary);
+	if (!fo.bad()) {
 		int size = m_refChain.GetLength();
 		fo.write((char*)&size, 4);
 		fo.write((char*)this->GetChainString(), size);
@@ -30,7 +31,7 @@ bool CWorkspace::Save(std::string& sFilepath) {
 }
 
 bool CWorkspace::Load(std::string& sFilepath) {
-	std::fstream fi(sFilepath, std::ios_base::in | std::ios_base::binary);
+	std::fstream fi(sFilepath.c_str(), std::ios_base::in | std::ios_base::binary);
 	if (!fi.bad()) {
 		int size = 0;
 		char* ps;

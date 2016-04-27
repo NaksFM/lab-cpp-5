@@ -3,3 +3,6 @@
 *.suo
 *.opensdf
 *.bin
+*.o
+CiperCover
+!Makefile
