@@ -15,10 +15,15 @@ void CLink::Output(std::ostream& os) {
 };
 
 bool CLink::Save(std::ostream& so) {
-	//out: &m_refChain m_nPos m_nSize
-	so << &m_refChain << " ";
-	so << m_nPos << " ";
-	so << m_nSize;
+	so.write((char*)&m_nPos, 4);
+	so.write((char*)&m_nSize, 4);
+
+	return true;
+};
+
+bool CLink::Load(std::istream& is) {
+	is.read((char*)&m_nPos, 4);
+	is.read((char*)&m_nSize, 4);
 
 	return true;
 };

@@ -15,7 +15,7 @@ public:
 	//Зберігає об"єкт у вихідному потоці
 	virtual bool Save(std::ostream& so);
  	//Зчитує об"єкт із вхідного потоку
-	//virtual bool Load(std::istream& is);
+	virtual bool Load(std::istream& is);
 protected:
 	//Посилання на контейнер з повною послідовністю
 	CDataChain& m_refChain;
