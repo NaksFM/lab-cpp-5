@@ -4,10 +4,29 @@
 #include <iostream>
 
 CLink::CLink(CDataChain& refChain):m_refChain(refChain) {};
+CLink::~CLink(){};
 
 bool CLink::Attach(const char* sSubStr) {
 	m_nPos = m_refChain.Find(sSubStr, 0);
 	m_nSize = strlen(sSubStr);
+};
+
+bool CLink::setPos(int nPos) {
+	if (nPos >= 0 && nPos < m_refChain.GetLength()) {
+		m_nPos = nPos;
+		return true;
+	} else {
+		return false;
+	}
+};
+
+bool CLink::setSize(int nSize) {
+	if (nSize >= 0 && nSize <= m_refChain.GetLength() - nSize) {
+		m_nSize = nSize;
+		return true;
+	} else {
+		return false;
+	}
 };
 
 void CLink::Output(std::ostream& os) {

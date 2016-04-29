@@ -1,5 +1,6 @@
 #include "CWorkspace.h"
 #include "CDataSimple.h"
+#include "CLink.h"
 #include <string>
 #include <fstream>
 
@@ -49,5 +50,34 @@ bool CWorkspace::Load(std::string& sFilepath) {
 	}
 	else {
 		return false;
+	}
+}
+
+bool CWorkspace::AddLink(int nStartPos, int nLength, CLink* pLink) {
+	if (pLink->setPos(nStartPos) && pLink->setSize(nLength)) {
+		m_aLinks.push_back(pLink);
+		return true;
+	} else {
+		return false;
+	}
+}
+
+bool CWorkspace::RemoveLink(int nPosInList) {
+	if (nPosInList < m_aLinks.size()) {
+		delete m_aLinks[nPosInList];
+		m_aLinks.erase(m_aLinks.begin() + nPosInList);
+		return true;
+	} else {
+		return false;
+	}
+}
+
+bool CWorkspace::GetAllLinks(LinksArray& aLinks) {
+	if (m_aLinks.empty()) {
+		aLinks = m_aLinks;
+		return false;
+	} else {
+		aLinks = m_aLinks;
+		return true;
 	}
 }

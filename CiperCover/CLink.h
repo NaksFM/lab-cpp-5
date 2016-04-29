@@ -1,7 +1,8 @@
 #pragma once
 
-#include <iostream>
 #include "CDataChain.h"
+#include <iostream>
+#include <vector>
 
 class CLink
 {
@@ -10,6 +11,10 @@ public:
 	virtual ~CLink(void);
 	//Пробує прив"язати об"єкт до підстрічки у послідовності
 	bool Attach(const char* sSubStr);
+	//Вручну встановити позицію підстрічки
+	bool setPos(int nPos);
+	//Вручну всановити дожину підпослідовності
+	bool setSize(int nSize);
 	//Форматований вивід на консоль
 	virtual void Output(std::ostream& os);
 	//Зберігає об"єкт у вихідному потоці
@@ -24,3 +29,5 @@ protected:
 	//Довжина підстрічки, до якої прив"язується об"єкт
 	int m_nSize;
 };
+
+typedef std::vector<CLink*> LinksArray;
