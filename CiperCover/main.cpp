@@ -3,6 +3,7 @@
 #include "CDataSimple.h"
 #include "CWorkspace.h"
 #include "CDialogManager.h"
+#include "CLink.h"
 
 using namespace std;
 
@@ -42,7 +43,21 @@ void loadSequence(CWorkspace& ws) {
 	ws.Load(path);
 }
 
+void findSubstring(CWorkspace& ws) {
+	// PROBLEMS  m_refChain is private
+	CLink* link = new CLink(ws.m_refChain);
+	
+	string str;
+	cout << "Write string to find " << endl; 
+	cin >> str;
 
+	if (link->Attach(str.c_str())) {
+		string out_str(ws.GetChainString());
+		out_str.insert(link->startPos(), 1, '(');
+		out_str.insert(link->startPos() + link->size(), 1, ')');
+		cout << out_str << endl;
+	}
+}
 
 int main (int argc, char* argv[]) {
 	//CDataSimple dataSimple;
@@ -63,6 +78,7 @@ int main (int argc, char* argv[]) {
 	mgr.RegisterCommand("Show sequence", showFullSequence);
 	mgr.RegisterCommand("Save", saveSequence);
 	mgr.RegisterCommand("Load", loadSequence);
+	mgr.RegisterCommand("Find substring", findSubstring);
 	mgr.Run();
 
 	return 0;

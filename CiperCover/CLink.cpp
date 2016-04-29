@@ -2,13 +2,19 @@
 #include "CDataChain.h"
 #include <cstring>
 #include <iostream>
+#include <string>
 
 CLink::CLink(CDataChain& refChain):m_refChain(refChain) {};
 CLink::~CLink(){};
 
 bool CLink::Attach(const char* sSubStr) {
-	m_nPos = m_refChain.Find(sSubStr, 0);
-	m_nSize = strlen(sSubStr);
+	if (std::string::npos != m_refChain.Find(sSubStr, 0)) {
+		m_nPos = m_refChain.Find(sSubStr, 0);
+		m_nSize = strlen(sSubStr);
+		return true;
+	} else {
+		return false;
+	}
 };
 
 bool CLink::setPos(int nPos) {
@@ -27,6 +33,14 @@ bool CLink::setSize(int nSize) {
 	} else {
 		return false;
 	}
+};
+
+int CLink::size() {
+	return m_nSize;
+};
+
+int CLink::startPos() {
+	return m_nPos;
 };
 
 void CLink::Output(std::ostream& os) {

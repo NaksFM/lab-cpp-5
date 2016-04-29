@@ -27,7 +27,8 @@ public:
 	bool RemoveLink(int nPosInList);
 	//Повертає всі лінки, що присутні в списку
 	bool GetAllLinks(LinksArray& aLinks);
-	void showAllLinks();
+	// ?
+	//void showAllLinks();
 private:
 	//Зсилка на контейнер (породжений від CDataChain) із послідовністю
 	CDataChain& m_refChain;
