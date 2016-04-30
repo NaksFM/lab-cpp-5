@@ -17,6 +17,10 @@ const char* CWorkspace::GetChainString() {
 	return m_refChain.GetFullString();
 }
 
+CDataChain& CWorkspace::getRefChain() {
+	return m_refChain;
+}
+
 bool CWorkspace::Save(std::string& sFilepath) {
 	std::fstream fo(sFilepath.c_str(), std::ios_base::out | std::ios_base::binary);
 	if (!fo.bad()) {

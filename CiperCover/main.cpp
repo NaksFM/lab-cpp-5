@@ -44,8 +44,8 @@ void loadSequence(CWorkspace& ws) {
 }
 
 void findSubstring(CWorkspace& ws) {
-	// PROBLEMS  m_refChain is private
-	CLink* link = new CLink(ws.m_refChain);
+	// PROBLEMS  if m_refChain is private
+	CLink* link = new CLink(ws.getRefChain());
 	
 	string str;
 	cout << "Write string to find " << endl; 
@@ -53,9 +53,22 @@ void findSubstring(CWorkspace& ws) {
 
 	if (link->Attach(str.c_str())) {
 		string out_str(ws.GetChainString());
-		out_str.insert(link->startPos(), 1, '(');
-		out_str.insert(link->startPos() + link->size(), 1, ')');
+		out_str.insert(link->startPos(), " (");
+		out_str.insert(link->startPos() + link->size() + 2, ") ");
+		cout << endl;
+		cout << "Substring \"" <<  str << "\" finded." << endl;
 		cout << out_str << endl;
+		cout << "Do you want to save it y/n" << endl;
+
+		char choise;
+		cin >> choise;
+		if (tolower(choise) == 'y') {
+
+		} else {
+
+		}
+	} else {
+
 	}
 }
 

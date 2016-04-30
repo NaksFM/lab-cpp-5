@@ -29,6 +29,7 @@ public:
 	bool GetAllLinks(LinksArray& aLinks);
 	// ?
 	//void showAllLinks();
+	CDataChain& getRefChain();
 private:
 	//Зсилка на контейнер (породжений від CDataChain) із послідовністю
 	CDataChain& m_refChain;
