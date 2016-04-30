@@ -63,13 +63,37 @@ void findSubstring(CWorkspace& ws) {
 		char choise;
 		cin >> choise;
 		if (tolower(choise) == 'y') {
+			ws.AddLink(link->startPos(), link->size(), link);
 
-		} else {
-
-		}
+			string path;
+			cout << "Vrite path to file, or Enter * to use default path (save.bin)" << endl;
+			cin >> path;
+			if (path.length() == 1 && path[0] == '*') {
+				path = "save.bin";
+			} else {
+				ws.Save(path);
+			}
+		} 
 	} else {
-
+		cout << "No matches found" << endl;
 	}
+}
+
+void showAllLinks(CWorkspace& ws) {
+	string ChainString(ws.GetChainString());
+	LinksArray aLinks;
+	ws.GetAllLinks(aLinks);
+
+	cout << endl;
+	cout << "Links count: " << aLinks.size() << endl;
+
+	for (int i = 0; i < aLinks.size(); i++) {
+		cout << i + 1 << " ";
+		cout << '"' << ChainString.substr(aLinks[i]->startPos(), aLinks[i]->size()) << '"';
+	}
+
+	cout << endl;
+
 }
 
 int main (int argc, char* argv[]) {
@@ -92,6 +116,7 @@ int main (int argc, char* argv[]) {
 	mgr.RegisterCommand("Save", saveSequence);
 	mgr.RegisterCommand("Load", loadSequence);
 	mgr.RegisterCommand("Find substring", findSubstring);
+	mgr.RegisterCommand("Show all links", showAllLinks);
 	mgr.Run();
 
 	return 0;
