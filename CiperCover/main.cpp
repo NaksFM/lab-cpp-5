@@ -89,7 +89,7 @@ void showAllLinks(CWorkspace& ws) {
 
 	for (int i = 0; i < aLinks.size(); i++) {
 		cout << i + 1 << " ";
-		cout << '"' << ChainString.substr(aLinks[i]->startPos(), aLinks[i]->size()) << '"';
+		cout << '"' << ChainString.substr(aLinks[i]->startPos(), aLinks[i]->size()) << '"' << endl;
 	}
 
 	cout << endl;

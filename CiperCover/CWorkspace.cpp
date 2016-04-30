@@ -63,9 +63,10 @@ bool CWorkspace::Load(std::string& sFilepath) {
 			int nLength = 0;
 			fi.read((char*)&nLength, 4);
 			CLink* pLink = new CLink(m_refChain);
-
-			this->AddLink(nStartPos, nLength, pLink);
-
+			
+			if (nLength != 0) {
+				this->AddLink(nStartPos, nLength, pLink);
+			}
 		}
 
 		fi.close();
