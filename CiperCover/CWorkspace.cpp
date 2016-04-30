@@ -27,6 +27,12 @@ bool CWorkspace::Save(std::string& sFilepath) {
 		int size = m_refChain.GetLength();
 		fo.write((char*)&size, 4);
 		fo.write((char*)this->GetChainString(), size);
+
+		// зберігаємо всі наявні ссилки CLink
+		for (int i = 0; i < m_aLinks.size(); i++) {
+			m_aLinks[i]->Save(fo);
+		}
+
 		fo.close();
 		return true;
 	}
@@ -48,6 +54,20 @@ bool CWorkspace::Load(std::string& sFilepath) {
 		std::string fin(ps);
 		delete[] ps;
 		m_refChain.setString(fin);
+
+		// зчитуємо всі наявні ссилки CLink
+		while (fi.good()) {
+			int nStartPos = 0;
+			fi.read((char*)&nStartPos, 4);
+
+			int nLength = 0;
+			fi.read((char*)&nLength, 4);
+			CLink* pLink = new CLink(m_refChain);
+
+			this->AddLink(nStartPos, nLength, pLink);
+
+		}
+
 		fi.close();
 		
 		return true;
