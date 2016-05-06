@@ -41,6 +41,7 @@ bool CWorkspace::Save(std::string& sFilepath) {
 	}
 }
 
+
 bool CWorkspace::Load(std::string& sFilepath) {
 	std::fstream fi(sFilepath.c_str(), std::ios_base::in | std::ios_base::binary);
 	if (!fi.bad()) {
@@ -106,3 +107,4 @@ bool CWorkspace::GetAllLinks(LinksArray& aLinks) {
 		return true;
 	}
 }
+
