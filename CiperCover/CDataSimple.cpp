@@ -48,3 +48,4 @@ void CDataSimple::Generate(int nDepth, int nMaxLength) {
 
 	m_sChain = s;
 }
+
