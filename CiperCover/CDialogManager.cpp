@@ -6,9 +6,9 @@ CDialogManager::CDialogManager(CWorkspace& ws):m_refWorkspace(ws) {
  m_aCommands.push_back(new CDlgCommand("Quit"));
 };
 
-// треба реалізувати деструктор
+// реалізовуємо деструктор
 CDialogManager::~CDialogManager() {
-	// звільняємо память виділену під зареєстровані команди
+	// звільняємо память виділену під реєстрування команди
 	for(size_t i = 0; i < m_aCommands.size(); i++)
 		delete m_aCommands[i];
 };
