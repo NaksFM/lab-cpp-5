@@ -8,7 +8,6 @@ class CDataSimple : public CDataChain
 private:
 	// поертає довжину числа 
 	int _numberLength(int number);
-	// 123 => ['1', '2', '3'];
 	char* _intToChars(int number);
 public:
 	CDataSimple(void);
