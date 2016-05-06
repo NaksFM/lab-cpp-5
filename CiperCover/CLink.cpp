@@ -60,4 +60,3 @@ bool CLink::Load(std::istream& is) {
 
 	return true;
 };
-
